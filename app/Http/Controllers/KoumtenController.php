@@ -12,10 +12,12 @@ class KoumtenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // 会社一覧を表示するコントローラーにしたい。
+    // 新築、リフォーム、修理系(修理の種類)で変数を分けてその都度表示を変えたい。
     public function index()
     {
         //
-        return view();
+        return view('koumuten.index');
     }
 
     /**

@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/koumuten', function () {
+    return view('koumuten.top');
+});
+
 Route::resource('/kmt',App\Http\Controllers\KoumtenController::class);

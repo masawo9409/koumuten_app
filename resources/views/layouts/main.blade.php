@@ -14,8 +14,8 @@
         工務店お探しアプリ
     </div>
     <div class="main">
-        <!-- @yield('content')
-        @yield('script') -->
+        @yield('content')
+        @yield('script')
     </div>
     <div class="footer">
 
