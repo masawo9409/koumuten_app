@@ -14,10 +14,20 @@ class KoumtenController extends Controller
      */
     // 会社一覧を表示するコントローラーにしたい。
     // 新築、リフォーム、修理系(修理の種類)で変数を分けてその都度表示を変えたい。
-    public function index()
+    public function index(Request $request)
     {
-        //
-        return view('koumuten.index');
+        $company = Koumten::all();
+        switch ($request) {
+            case 'sinchiku':
+                return view('koumuten.index', ['company' => $company]);
+                break;
+            case 'reform':
+                return view('koumuten.index', ['company' => $company]);
+                break;
+            default:
+                return view('koumuten.index', ['company' => $company]);
+                break;
+        }
     }
 
     /**
