@@ -22,6 +22,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('/koumten',KoumtenController::class);
+Route::resource('/koumtens',KoumtenController::class)
+    ->only(['create','store','edit','update','destroy'])
+    ->middleware('auth');
+
+Route::resource('/koumtens', KoumtenController::class)
+    ->only(['show', 'index']);
 
 require __DIR__.'/auth.php';
