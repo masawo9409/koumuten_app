@@ -18,9 +18,15 @@ use App\Http\Controllers\KoumtenController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
+Route::get('/', [KoumtenController::class, 'index'])
+    ->name('root');
+
+Route::get('/dashbord', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/top', function () {
+    return view('koumuten.top');});
 
 Route::resource('/koumtens',KoumtenController::class)
     ->only(['create','store','edit','update','destroy'])

@@ -14,14 +14,11 @@
         工務店お探しアプリ
     </div>
     <div class="main">
-        @yield('content')
-        @yield('script')
+        {{ $slot }}
     </div>
     <div class="footer">
 
     </div>
-
-
 </body>
 
 </html>
