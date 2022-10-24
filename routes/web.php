@@ -35,4 +35,7 @@ Route::resource('/koumtens',KoumtenController::class)
 Route::resource('/koumtens', KoumtenController::class)
     ->only(['show', 'index']);
 
+Route::get('/b1',[App\Http\Controllers\KoumtenController::class,'button1'])
+    ->name('button1');
+
 require __DIR__.'/auth.php';
