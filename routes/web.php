@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KoumtenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/koumuten', function () {
-    return view('koumuten.top');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::resource('/kmt',App\Http\Controllers\KoumtenController::class);
+Route::resource('/koumten',KoumtenController::class);
+
+require __DIR__.'/auth.php';
