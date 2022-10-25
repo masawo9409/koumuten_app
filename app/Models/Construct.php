@@ -9,13 +9,13 @@ class Construct extends Model
 {
     use HasFactory;
 
-    // public function koumten()
-    // {
-    //     return $this->belongsTo(Koumten::class);
-    // }
+    public function koumten()
+    {
+        return $this->belongsTo(Koumten::class);
+    }
 
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

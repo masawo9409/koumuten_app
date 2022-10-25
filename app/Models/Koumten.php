@@ -11,13 +11,13 @@ class Koumten extends Model
     use HasFactory;
     use SoftDeletes;
 
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-    // public function construct()
-    // {
-    //     return $this->hasOne(Construct::class);
-    // }
+    public function construct()
+    {
+        return $this->hasOne(Construct::class);
+    }
 }

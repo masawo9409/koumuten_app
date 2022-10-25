@@ -42,13 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function koumten()
-    // {
-    //     return $this->hasOne(Koumten::class);
-    // }
+    public function koumten()
+    {
+        return $this->hasOne(Koumten::class);
+    }
 
-    // public function construct()
-    // {
-    //     return $this->hasOne(Construct::class);
-    // }
+    public function construct()
+    {
+        return $this->hasOne(Construct::class);
+    }
 }
