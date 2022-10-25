@@ -19,7 +19,7 @@
             <br>
             {{ $koumuten->contact_address_phone }}
             <br>
-            {{ $koumuten->contact_address_mail }}
+            {{ $koumuten->contact_address_mail }} 
         </div>
     @endforeach
 

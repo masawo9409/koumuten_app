@@ -18,6 +18,7 @@ class KoumtenController extends Controller
     public function button1(Request $request)
     {
         $koumutens = Koumten::all();
+        // dd($koumutens);
         if ($request->has('sinchiku')) {
             $construct ='新築';
             return view('koumuten.index', compact('construct','koumutens'));
