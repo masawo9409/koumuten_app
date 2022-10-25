@@ -22,12 +22,8 @@ class CreateConstructsTable extends Migration
             $table->string('repair_naisou')->nullable();
             $table->string('repair_mizumore')->nullable();
             $table->string('repair_aircon')->nullable();
-            $table->foreignId('user_id')
-                ->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId('koumten_id')
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('koumten_id_foreign')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }

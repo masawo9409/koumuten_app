@@ -18,6 +18,6 @@ class Koumten extends Model
 
     public function construct()
     {
-        return $this->belongsTo(Construct::class);
+        return $this->hasOne(Construct::class);
     }
 }

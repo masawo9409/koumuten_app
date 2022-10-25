@@ -26,8 +26,6 @@ class CreateKoumtensTable extends Migration
                 ->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
-            $table->dropForeign('koumtens_user_id_foreign');
-            $table->dropColumn('user_id');
         });
     }
 

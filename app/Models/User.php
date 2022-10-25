@@ -44,11 +44,11 @@ class User extends Authenticatable
 
     public function koumten()
     {
-        return $this->belongsTo(Koumten::class);
+        return $this->hasOne(Koumten::class);
     }
 
     public function construct()
     {
-        return $this->belongsTo(Construct::class);
+        return $this->hasOne(Construct::class);
     }
 }
