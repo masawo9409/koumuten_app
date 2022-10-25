@@ -14,7 +14,7 @@ class CreateKoumtensTable extends Migration
     public function up()
     {
         Schema::create('koumtens', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('name');
             $table->string('address');
             $table->string('avairable_area');

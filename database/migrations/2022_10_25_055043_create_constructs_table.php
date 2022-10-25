@@ -23,11 +23,11 @@ class CreateConstructsTable extends Migration
             $table->string('repair_mizumore')->nullable();
             $table->string('repair_aircon')->nullable();
             $table->foreignId('user_id')
-                ->constrained()
+                ->constrained('users')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->foreignId('koumten_id')
-                ->constrained()
+                ->constrained('koumtens')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->timestamps();
