@@ -17,14 +17,18 @@ class KoumtenController extends Controller
 
     public function button1(Request $request)
     {
+        $koumutens = Koumten::all();
         if ($request->has('sinchiku')) {
-            return view('koumuten.index', ['construct' => '新築']);
+            $construct ='新築';
+            return view('koumuten.index', compact('construct','koumutens'));
 
         }else if($request->has('reform')){
-            return view('koumuten.index', ['construct' => 'リフォーム']);
+            $construct = 'リフォーム';
+            return view('koumuten.index', compact('construct', 'koumutens'));
 
         }else if($request->has('repair')){
-            return view('koumuten.index', ['construct' => '修繕']);        
+            $construct = '修繕';
+            return view('koumuten.index', compact('construct', 'koumutens'));        
         }
     }
 
