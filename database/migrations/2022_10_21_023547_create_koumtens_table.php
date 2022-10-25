@@ -17,9 +17,9 @@ class CreateKoumtensTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->string('avairable area');
-            $table->string('contact address phone');
-            $table->string('contact address mail');
+            $table->string('avairable_area');
+            $table->string('contact_address_phone');
+            $table->string('contact_address_mail');
             $table->timestamps();
             $table->softDeletes();
         });
