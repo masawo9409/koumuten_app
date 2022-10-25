@@ -1,8 +1,6 @@
 <!-- 会社詳細が表示されるページ -->
+<x-app-layout>
 
-@extends('layouts.main')
-@section('title', '会社詳細')
-@section('content')
 <!-- <p>{{ 工事内容 }}に対応できる会社</p> -->
 
 <div class=CompanyDtail>
@@ -13,4 +11,6 @@
     {{ 対応可能エリア }}
     {{ 連絡先 }}
 </div>
-@endsection
+
+</x-app-layout>
+
