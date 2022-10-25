@@ -17,13 +17,9 @@ class CreateKoumtensTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->string('Available construction')->nullable();  
-            $table->integer('budget')->nullable(); 
+            $table->string('avairable area');
             $table->string('contact address phone');
             $table->string('contact address mail');
-            // なぜここだけnullableなのか？
-            $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();            
             $table->timestamps();
             $table->softDeletes();
         });
