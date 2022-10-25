@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Construct;
 use App\Models\Koumten;
 use Illuminate\Http\Request;
 
@@ -20,16 +21,14 @@ class KoumtenController extends Controller
         $koumutens = Koumten::all();
         // dd($koumutens);
         if ($request->has('sinchiku')) {
-            $construct ='新築';
-            return view('koumuten.index', compact('construct','koumutens'));
-
-        }else if($request->has('reform')){
+            $construct = '新築';
+            return view('koumuten.index', compact('construct', 'koumutens'));
+        } else if ($request->has('reform')) {
             $construct = 'リフォーム';
             return view('koumuten.index', compact('construct', 'koumutens'));
-
-        }else if($request->has('repair')){
+        } else if ($request->has('repair')) {
             $construct = '修繕';
-            return view('koumuten.index', compact('construct', 'koumutens'));        
+            return view('koumuten.index', compact('construct', 'koumutens'));
         }
     }
 
@@ -67,7 +66,6 @@ class KoumtenController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -76,9 +74,10 @@ class KoumtenController extends Controller
      * @param  \App\Models\Koumten  $koumten
      * @return \Illuminate\Http\Response
      */
-    public function show(Koumten $koumten)
-    {
-        //
+    public function show(Koumten $koumten,Construct $construct)
+    {   
+        $constructs = Construct::find($koumten);
+        return view('koumuten.show', compact('koumten', 'construct_types'));
     }
 
     /**

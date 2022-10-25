@@ -9,7 +9,7 @@
 
     @foreach ($koumutens as $koumuten)
         <div >
-            {{ $koumuten->name }}
+            <a href="{{ route('koumtens.show',$koumuten) }}">{{ $koumuten->name }}</a>
             <br>
             {{ $koumuten->address }}
             <br>
