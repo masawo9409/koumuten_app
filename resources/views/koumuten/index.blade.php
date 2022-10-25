@@ -15,6 +15,8 @@
             <br>
             {{ $koumuten->avairable_area }}
             <br>
+            {{ $koumuten->construct->sinchiku }}
+            <br>
             {{ $koumuten->contact_address_phone }}
             <br>
             {{ $koumuten->contact_address_mail }}

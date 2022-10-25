@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function koumten()
+    {
+        return $this->belongsTo(Koumten::class);
+    }
+
+    public function construct()
+    {
+        return $this->belongsTo(Construct::class);
+    }
 }

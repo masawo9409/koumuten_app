@@ -20,8 +20,14 @@ class CreateKoumtensTable extends Migration
             $table->string('avairable_area');
             $table->string('contact_address_phone');
             $table->string('contact_address_mail');
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
+            $table->dropForeign('koumtens_user_id_foreign');
+            $table->dropColumn('user_id');
         });
     }
 
