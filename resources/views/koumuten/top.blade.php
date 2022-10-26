@@ -25,5 +25,8 @@
             <br>
         </div>
     </form>
+    {{-- 会社登録 --}}
+
+    {{-- 地図 --}}
     <div id="map" style="width:1000px; height:600px"></div>
 </x-app-layout>

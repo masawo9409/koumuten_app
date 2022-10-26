@@ -55,7 +55,7 @@ class KoumtenController extends Controller
      */
     public function create()
     {
-        //
+        return view('koumuten.create');
     }
 
     /**
