@@ -25,5 +25,5 @@
             <br>
         </div>
     </form>
-    <div id="map" style="width:600px;height:600px"></div>
+    <div id="map" style="width:1000px; height:600px"></div>
 </x-app-layout>
