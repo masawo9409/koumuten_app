@@ -25,6 +25,5 @@
             <br>
         </div>
     </form>
-
-    {{-- @include('partial.map') --}}
+    <div id="map" style="width:600px;height:600px"></div>
 </x-app-layout>

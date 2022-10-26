@@ -77,7 +77,7 @@ class KoumtenController extends Controller
     public function show(Koumten $koumten,Construct $construct)
     {   
         $constructs = Construct::find($koumten);
-        return view('koumuten.show', compact('koumten', 'construct_types'));
+        return view('koumuten.show', compact('koumten'));
     }
 
     /**

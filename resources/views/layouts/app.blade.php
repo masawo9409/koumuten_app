@@ -16,11 +16,12 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
-
+            
             <!-- Page Heading ヘッダー2段目削除 -->
             {{-- <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -32,5 +33,6 @@
                 {{ $slot }}
             </main>
         </div>
+        @include('partial.map')
     </body>
 </html>
