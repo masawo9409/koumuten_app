@@ -64,19 +64,19 @@ class KoumtenController extends Controller
      * @param    $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Koumten $koumten)
     {
         $koumuten = new Koumten($request->all());
-        // $construct =new Construct($request->all());
-
         $koumuten->user_id = $request->user()->id;
-        // $construct->user_id = $request->user()->id;
-
         $koumuten->save();
-        // $construct->save();
+
+        $construct =new Construct($request->all());
+        $construct->user_id = $request->user()->id;
+        $construct->koumten_id = $request->user()->id;
+        $construct->save();
 
         return redirect()
-            ->route('koumtens.show', $koumuten)
+            ->route('koumtens.show', $construct)
             ->with('notice', 'コメントを登録しました');
     }
 

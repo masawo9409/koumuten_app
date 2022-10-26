@@ -22,7 +22,7 @@
         {{-- 会社 --}}
         <div class="mb-4">
             <label class="block text-gray-700 text-sm mb-2" for="name">
-                タイトル
+                会社名
             </label>
             <input type="text" name="name"
                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
@@ -71,11 +71,11 @@
                 </label>
                 <input type="file" name="image" class="border-gray-300">
             </div>--}}
-            <input type="submit" value="登録"
+            {{-- <input type="submit" value="登録"
                 class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> 
-        </form>
+        </form> --}}
 
-        {{-- <h2 class="text-center text-lg font-bold pt-6 tracking-widest">対応工事/費用の登録</h2>
+        <h2 class="text-center text-lg font-bold pt-6 tracking-widest">対応工事/費用の登録</h2>
         <p class="text-gray-700 pt-6 tracking-widest">対応可能な工事項目の最低予算を記入してください</p>
 
         <form action="">
@@ -140,7 +140,7 @@
             <input type="submit" value="登録"
                 class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
 
-        </form> --}}
+        </form>
 
 
     </div>
