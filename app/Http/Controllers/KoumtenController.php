@@ -19,15 +19,16 @@ class KoumtenController extends Controller
     public function button1(Request $request)
     {
         $koumutens = Koumten::all();
-        // dd($koumutens);
+        // constructのsinchikuカラムに数字が入力されている会社を一覧表示する。
         if ($request->has('sinchiku')) {
-            $construct = '新築';
-            return view('koumuten.index', compact('construct', 'koumutens'));
+            $constructs = '新築';
+            $koumutens = Construct::where('sinchiku', '!=', '-')->get();
+            return view('koumuten.index', compact('constructs', 'koumutens'));
         } else if ($request->has('reform')) {
-            $construct = 'リフォーム';
+            $constructs = 'リフォーム';
             return view('koumuten.index', compact('construct', 'koumutens'));
         } else if ($request->has('repair')) {
-            $construct = '修繕';
+            $constructs = '修繕';
             return view('koumuten.index', compact('construct', 'koumutens'));
         }
     }
@@ -64,19 +65,22 @@ class KoumtenController extends Controller
      * @param    $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,Koumten $koumten)
+    public function store(Request $request, Koumten $koumten)
     {
         $koumuten = new Koumten($request->all());
         $koumuten->user_id = $request->user()->id;
         $koumuten->save();
 
-        $construct =new Construct($request->all());
-        $construct->user_id = $request->user()->id;
-        $construct->koumten_id = $request->user()->id;
+        $construct = new Construct($request->all());
+        // constructテーブルのkoumten_idにuseridを入れているので、koumten_idがuserと一致してしまう
+        // $construct->koumten_id = $request->user()->id;
+        $construct->koumten_id = $request->id;
         $construct->save();
 
+        $koumten = $koumuten;
+
         return redirect()
-            ->route('koumtens.show', $construct)
+            ->route('koumtens.show', compact('koumten'))
             ->with('notice', 'コメントを登録しました');
     }
 
@@ -86,8 +90,9 @@ class KoumtenController extends Controller
      * @param  \App\Models\Koumten  $koumten
      * @return \Illuminate\Http\Response
      */
-    public function show(Koumten $koumten,Construct $construct)
-    {   
+    public function show(Koumten $koumten, Construct $construct)
+    {
+
         $constructs = Construct::find($koumten);
         return view('koumuten.show', compact('koumten'));
     }

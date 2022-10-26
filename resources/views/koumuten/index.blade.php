@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <p>{{ $construct }} に対応できる会社一覧</p>
+    <p>{{ $constructs }} に対応できる会社一覧</p>
 
     @foreach ($koumutens as $koumuten)
         <div >
@@ -38,4 +38,5 @@
     {{ $company->name }} --}}
     </div>
     <!-- map表示したい -->
+    <div id="map" style="width:1000px; height:600px"></div>
 </x-app-layout>

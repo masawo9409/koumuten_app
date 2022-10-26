@@ -18,10 +18,10 @@ use App\Http\Controllers\KoumtenController;
 //     return view('welcome');
 // });
 
-Route::get('/', [KoumtenController::class, 'index'])
-    ->name('root');
+// Route::get('/', [KoumtenController::class, 'index'])
+//     ->name('root');
 
-Route::get('/dashbord', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 

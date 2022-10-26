@@ -7,6 +7,8 @@
     crossorigin=""></script>
 
 <script>
+    import { normalize } from 'https://cdn.skypack.dev/@geolonia/normalize-japanese-addresses'
+
     // 地図描画エリアを作成
     // id=mapで地図が表示されるようなオブジェクトを作成。
     // もしかしてL()の中身がidになる？
@@ -17,4 +19,7 @@
 
     // 表示するタイルを指定
     L.tileLayer('http://tile.openstreetmap.jp/{z}/{x}/{y}.png').addTo(map);
+
+
+
 </script>

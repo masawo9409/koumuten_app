@@ -22,10 +22,6 @@ class CreateConstructsTable extends Migration
             $table->string('repair_naisou')->nullable();
             $table->string('repair_mizumore')->nullable();
             $table->string('repair_aircon')->nullable();
-            $table->foreignId('user_id')
-                ->constrained('users')
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
             $table->foreignId('koumten_id')
                 ->constrained('koumtens')
                 ->cascadeOnUpdate()

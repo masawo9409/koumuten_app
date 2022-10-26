@@ -15,4 +15,5 @@
     <li>修理(水漏れ)&nbsp;:&nbsp;{{ $koumten->construct->repair_mizumore }}</li>
     <li>修理(エアコン)&nbsp;:&nbsp;{{ $koumten->construct->repair_aircon }}</li>
 </ul>
+<div id="map" style="width:1000px; height:600px"></div>
 </x-app-layout>
