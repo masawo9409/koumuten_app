@@ -61,11 +61,23 @@ class KoumtenController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param    $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $koumuten = new Koumten($request->all());
+        // $construct =new Construct($request->all());
+
+        $koumuten->user_id = $request->user()->id;
+        // $construct->user_id = $request->user()->id;
+
+        $koumuten->save();
+        // $construct->save();
+
+        return redirect()
+            ->route('koumtens.show', $koumuten)
+            ->with('notice', 'コメントを登録しました');
     }
 
     /**

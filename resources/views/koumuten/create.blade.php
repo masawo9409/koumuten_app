@@ -16,7 +16,7 @@
             </div>
         @endif --}}
 
-        {{-- <form action="{{ route('koumuten.store') }}" method="POST" enctype="multipart/form-data" --}}
+        <form action="{{ route('koumtens.store') }}" method="POST" enctype="multipart/form-data"
         class="rounded pt-3 pb-8 mb-4">
         @csrf
         {{-- 会社 --}}
@@ -70,12 +70,12 @@
                     ブログ用画像
                 </label>
                 <input type="file" name="image" class="border-gray-300">
-            </div>
+            </div>--}}
             <input type="submit" value="登録"
-                class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> --}}
+                class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> 
         </form>
 
-        <h2 class="text-center text-lg font-bold pt-6 tracking-widest">対応工事/費用の登録</h2>
+        {{-- <h2 class="text-center text-lg font-bold pt-6 tracking-widest">対応工事/費用の登録</h2>
         <p class="text-gray-700 pt-6 tracking-widest">対応可能な工事項目の最低予算を記入してください</p>
 
         <form action="">
@@ -140,7 +140,7 @@
             <input type="submit" value="登録"
                 class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
 
-        </form>
+        </form> --}}
 
 
     </div>

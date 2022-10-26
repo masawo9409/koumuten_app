@@ -18,4 +18,14 @@ class Construct extends Model
     {
         return $this->belongsTo(User::class);
     }
+    protected $fillable = [
+        'sinchiku',
+        'reform',
+        'repair_amamori',
+        'repair_gaiheki',
+        'repair_naisou',
+        'repair_mizumore',
+        'repair_aircon',
+    ];
+
 }

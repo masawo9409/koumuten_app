@@ -20,4 +20,11 @@ class Koumten extends Model
     {
         return $this->hasOne(Construct::class);
     }
+    protected $fillable = [
+        'name',
+        'address',
+        'avairable_area',
+        'contact_address_phone',
+        'contact_address_mail',
+    ];
 }
