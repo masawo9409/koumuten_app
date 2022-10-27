@@ -1,7 +1,7 @@
 <x-app-layout>
     <!-- 依頼内容選択画面 -->
     <p>依頼内容を選択してください</p>
-    <div class="button01">
+    <div class="button01" >
         <form action="{{ route('button1') }}" method='get'>
             @csrf
             <!-- 新築の会社一覧ページに飛ばしたい -->
