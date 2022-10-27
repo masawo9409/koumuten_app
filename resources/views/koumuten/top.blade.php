@@ -25,7 +25,4 @@
             <br>
         </form>
     </div>
-
-    {{-- 地図 --}}
-    <div id="map" style="width:1000px; height:600px"></div>
 </x-app-layout>

@@ -35,21 +35,6 @@
             {{ $slot }}
         </main>
     </div>
-    @include('partial.map')
-
-    {{-- 住所検索機能  --}}
-    <div class="container">
-        <h1>住所正規化デモ</h1>
-    </div>
-
-    <div id="root"></div>
-
-    <div class="container" style="margin-top: 80px; border-top: 3px solid #dedede; padding: 8px;">
-        <p style="text-align: center;">By <a
-                href="https://github.com/geolonia/normalize-japanese-addresses">@geolonia/normalize-japanese-addresses</a>
-        </p>
-    </div>
-
 </body>
 
 </html>

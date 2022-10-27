@@ -21,22 +21,23 @@
             <br>
             {{ $koumuten->contact_address_mail }} 
         </div>
+        -----------------------------
     @endforeach
 
-    <br>
-    <!-- このdivセクションを会社の数だけ表示させたい。 -->
-    <!-- 薄いグレーを背景に反映させたい -->
-    <div class=CompanyIndex>
-        <!-- データベースの内容を受け取りたい。 -->
-        {{-- <!-- 会社名 -->
-    {{ $company->name }}
-    <!-- 住所 -->
-    {{ $company->name }}
-    <!-- 対応可能工事 -->
-    {{ $company->name }}
-    <!-- 対応可能工事 -->
-    {{ $company->name }} --}}
-    </div>
+    <form action="{{ route('button1') }}">
+        <button type="submit" name="top" onclick="location.href='{{ route('button1') }}'">
+    </form>
+
     <!-- map表示したい -->
     <div id="map" style="width:1000px; height:600px"></div>
+    @include('partial.map')
+    <script>
+        @if (!empty($koumutens))
+            @foreach ($koumutens as $koumuten)
+                L.marker([{{ $koumuten->latitude }},{{ $koumuten->longitude }}])
+                    .bindPopup('<a href="{{ route('koumtens.show', $koumuten) }}">{{ $koumuten->name }}</a>', {closeButton: false})
+                    .addTo(map);
+            @endforeach
+        @endif
+    </script>
 </x-app-layout>

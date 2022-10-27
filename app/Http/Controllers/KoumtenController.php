@@ -18,13 +18,19 @@ class KoumtenController extends Controller
     public function button1(Request $request)
     {
         $koumutens = Koumten::all();
+
+        // 取得したデータの中心地を求める
+        $latitude = $koumutens->average('latitude');
+        $longitude = $koumutens->average('longitude');
+        $zoom = 5;
+
         // constructのsinchikuカラムに数字が入力されている会社を一覧表示する。
         if ($request->has('sinchiku')) {
             $constructs = '新築';
             // Koumtenテーブルでsinchikuカラムが-でないレコードデータを取得。
             $koumutens = Koumten::where('sinchiku', '!=', 'null')->get();
             // Koumten.indexにsinchiku対応の会社のデータをkoumten.indexに表示
-            return view('koumuten.index', compact('constructs', 'koumutens'));
+            return view('koumuten.index', compact('constructs', 'koumutens','latitude', 'longitude', 'zoom'));
         } else if ($request->has('reform')) {
             $constructs = 'リフォーム';
             $koumutens = Koumten::where('reform', '!=', 'null')->get();
@@ -73,7 +79,11 @@ class KoumtenController extends Controller
      */
     public function create()
     {
-        return view('koumuten.create');
+          // 最初に表示したい座標(今回は東京タワー)
+        $latitude = 35.658584;
+        $longitude = 139.7454316;
+        $zoom = 10;
+        return view('koumuten.create', compact('latitude', 'longitude', 'zoom'));
     }
 
     /**
@@ -109,7 +119,9 @@ class KoumtenController extends Controller
      */
     public function show(Koumten $koumten)
     {
-
+        $latitude = $koumten->latitude;
+        $longitude = $koumten->longitude;
+        $zoom = 12;
         return view('koumuten.show', compact('koumten'));
     }
 

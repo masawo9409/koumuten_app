@@ -27,6 +27,8 @@ class CreateKoumtensTable extends Migration
             $table->integer('repair_naisou')->nullable();
             $table->integer('repair_mizumore')->nullable();
             $table->integer('repair_aircon')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->foreignId('user_id')
                 ->constrained()
                 ->cascadeOnUpdate()
