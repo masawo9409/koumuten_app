@@ -15,11 +15,11 @@ class CreateKoumtensTable extends Migration
     {
         Schema::create('koumtens', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address');
-            $table->string('avairable_area');
-            $table->string('contact_address_phone');
-            $table->string('contact_address_mail');
+            $table->string('name')->nullable();;
+            $table->string('address')->nullable();;
+            $table->string('avairable_area')->nullable();;
+            $table->string('contact_address_phone')->nullable();;
+            $table->string('contact_address_mail')->nullable();;
             $table->integer('sinchiku')->nullable();
             $table->integer('reform')->nullable();
             $table->integer('repair_amamori')->nullable();

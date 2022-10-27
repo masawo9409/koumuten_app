@@ -15,5 +15,10 @@
     <li>修理(水漏れ)&nbsp;:&nbsp;{{ $koumten->repair_mizumore }}</li>
     <li>修理(エアコン)&nbsp;:&nbsp;{{ $koumten->repair_aircon }}</li>
 </ul>
+<form action="{{ route('button1') }}" method="GET" >
+    <input type="submit" value="会社一覧に戻る">
+</form>
+
 <div id="map" style="width:1000px; height:600px"></div>
+@include('partial.map')
 </x-app-layout>

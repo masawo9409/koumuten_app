@@ -2,9 +2,9 @@
     <!-- 依頼内容選択画面 -->
     <p>依頼内容を選択してください</p>
     <div class="button01">
-        <form action="{{ route('index') }}" method='get'>
+        <form action="{{ route('button1') }}" method='get'>
             @csrf
-            <button type="submit" name="sinchiku" onclick="location.href='{{ route('button1') }}'">
+            <button type="submit" name="repair" onclick="location.href='{{ route('button1') }}'">
                 <a>修理(雨漏り)</a>
             </button>
             <br>

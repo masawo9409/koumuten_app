@@ -26,7 +26,8 @@ Route::get('/', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/top', function () {
-    return view('koumuten.top');});
+    return view('koumuten.top');})
+    ->name('top');
 
 Route::resource('/koumtens',KoumtenController::class)
     ->only(['create','store','edit','update','destroy'])

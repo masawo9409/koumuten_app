@@ -26,7 +26,7 @@
             </label>
             <input type="text" name="name"
                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                required placeholder="会社名" value="{{ old('name') }}">
+                placeholder="会社名" value="{{ old('name') }}">
         </div>
         {{-- 住所 --}}
         <div class="mb-4">
@@ -35,7 +35,7 @@
             </label>
             <textarea name="address" rows="1"
                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                required>{{ old('address') }}</textarea>
+                >{{ old('address') }}</textarea>
         </div>
         {{-- 対応可能エリア --}}
         <div class="mb-4">
@@ -44,7 +44,7 @@
             </label>
             <textarea name="avairable_area" rows="1"
                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                required>{{ old('avairable_area') }}</textarea>
+                >{{ old('avairable_area') }}</textarea>
         </div>
         {{-- 電話番号 --}}
         <div class="mb-4">
@@ -53,7 +53,7 @@
             </label>
             <textarea name="contact_address_phone" rows="1"
                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                required>{{ old('contact_address_phone') }}</textarea>
+                >{{ old('contact_address_phone') }}</textarea>
         </div>
         {{-- メールアドレス --}}
         <div class="mb-4">
@@ -62,7 +62,7 @@
             </label>
             <textarea name="contact_address_mail" rows="1"
                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                required>{{ old('contact_address_mail') }}</textarea>
+                >{{ old('contact_address_mail') }}</textarea>
         </div>
         {{-- 画像アップロード --}}
         {{-- <div class="mb-4">
@@ -85,7 +85,7 @@
                 </label>
                 <textarea name="sinchiku" rows="1"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    required>{{ old('sinchiku') }}</textarea>
+                    >{{ old('sinchiku') }}</textarea>
             </div>
 
             <div class="mb-4">
@@ -94,7 +94,7 @@
                 </label>
                 <textarea name="reform" rows="1"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    required>{{ old('reform') }}</textarea>
+                    >{{ old('reform') }}</textarea>
             </div>
 
             <div class="mb-4">
@@ -103,7 +103,7 @@
                 </label>
                 <textarea name="repair_amamori" rows="1"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    required>{{ old('repair_amamori') }}</textarea>
+                    >{{ old('repair_amamori') }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_gaiheki">
@@ -111,7 +111,7 @@
                 </label>
                 <textarea name="repair_gaiheki" rows="1"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    required>{{ old('repair_gaiheki') }}</textarea>
+                    >{{ old('repair_gaiheki') }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_naisou">
@@ -119,7 +119,7 @@
                 </label>
                 <textarea name="repair_naisou" rows="1"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    required>{{ old('repair_naisou') }}</textarea>
+                    >{{ old('repair_naisou') }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_mizumore">
@@ -127,7 +127,7 @@
                 </label>
                 <textarea name="repair_mizumore" rows="1"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    required>{{ old('repair_mizumore') }}</textarea>
+                    >{{ old('repair_mizumore') }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_aircon">
@@ -135,7 +135,7 @@
                 </label>
                 <textarea name="repair_aircon" rows="1"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    required>{{ old('repair_aircon') }}</textarea>
+                    >{{ old('repair_aircon') }}</textarea>
             </div>
             <input type="submit" value="登録"
                 class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">

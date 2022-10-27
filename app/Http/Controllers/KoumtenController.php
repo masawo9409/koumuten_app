@@ -13,25 +13,50 @@ class KoumtenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // 会社一覧を表示するコントローラーにしたい。
-    // 新築、リフォーム、修理系(修理の種類)で変数を分けてその都度表示を変えたい。
 
+    // 会社一覧を表示するアクション。ルーティング名はbutton1で呼び出される
     public function button1(Request $request)
     {
         $koumutens = Koumten::all();
         // constructのsinchikuカラムに数字が入力されている会社を一覧表示する。
         if ($request->has('sinchiku')) {
             $constructs = '新築';
-            $koumutens = Koumten::where('sinchiku', '!=', '-')->get();
+            // Koumtenテーブルでsinchikuカラムが-でないレコードデータを取得。
+            $koumutens = Koumten::where('sinchiku', '!=', 'null')->get();
+            // Koumten.indexにsinchiku対応の会社のデータをkoumten.indexに表示
             return view('koumuten.index', compact('constructs', 'koumutens'));
         } else if ($request->has('reform')) {
             $constructs = 'リフォーム';
+            $koumutens = Koumten::where('reform', '!=', 'null')->get();
             return view('koumuten.index', compact('constructs', 'koumutens'));
         } 
-        // else if ($request->has('repair')) {
-        //     $constructs = '修繕';
-        //     return view('koumuten.index', compact('construct', 'koumutens'));
-        // }
+        // 修理一覧ページへ飛ぶ
+        else if ($request->has('repair')) {
+            $constructs = '修繕';
+            // $koumutens = Koumten::where('repair', '!=', '-')->get();
+            return view('koumuten.repair');
+        }
+        else if ($request->has('repair_amamori')) {
+            $constructs = '修繕(雨漏り)';
+            $koumutens = Koumten::where('repair_amamori', '!=', 'null')->get();
+            return view('koumuten.index',compact('constructs', 'koumutens'));
+        } else if ($request->has('repair_gaiheki')) {
+            $constructs = '修繕(外壁修理)';
+            $koumutens = Koumten::where('repair_gaiheki', '!=', 'null')->get();
+            return view('koumuten.index',compact('constructs', 'koumutens'));
+        } else if ($request->has('repair_naisou')) {
+            $constructs = '修繕(内装修理)';
+            $koumutens = Koumten::where('repair_naisou', '!=', 'null')->get();
+            return view('koumuten.index',compact('constructs', 'koumutens'));
+        } else if ($request->has('repair_mizumore')) {
+            $constructs = '修繕(水漏れ)';
+            $koumutens = Koumten::where('rrepair_mizumore', '!=', 'null')->get();
+            return view('koumuten.index',compact('constructs', 'koumutens'));
+        } else if ($request->has('repair_aircon')) {
+            $constructs = '修繕(エアコン修理)';
+            $koumutens = Koumten::where('repair_aircon', '!=', 'null')->get();
+            return view('koumuten.index',compact('constructs', 'koumutens'));
+        }
     }
 
     public function button2()
@@ -39,21 +64,7 @@ class KoumtenController extends Controller
         return view('koumuten.repair');
     }
 
-    public function index(Request $request)
-    {
-        $company = Koumten::all();
-        switch ($request) {
-            case 'sinchiku':
-                return view('koumuten.index', ['company' => $company]);
-                break;
-            case 'reform':
-                return view('koumuten.index', ['company' => $company]);
-                break;
-            default:
-                return view('koumuten.index', ['company' => $company]);
-                break;
-        }
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -86,7 +97,7 @@ class KoumtenController extends Controller
         $koumten = $koumuten;
 
         return redirect()
-            ->route('koumtens.show', compact('koumten'))
+            ->route('top', compact('koumten'))
             ->with('notice', 'コメントを登録しました');
     }
 
@@ -98,7 +109,7 @@ class KoumtenController extends Controller
      */
     public function show(Koumten $koumten)
     {
-        
+
         return view('koumuten.show', compact('koumten'));
     }
 

@@ -18,9 +18,7 @@
             </button>
             <br>
             <br>
-        </form>
-        <form action="{{ route('button2') }}" method='get'>
-            <button type="submit" name="repair" onclick="location.href='{{ route('button2') }}'">
+            <button type="submit" name="repair" onclick="location.href='{{ route('button1') }}'">
                 <a>家の修理をしたい</a>
             </button>
             <br>
