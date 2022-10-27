@@ -22,7 +22,7 @@ class KoumtenController extends Controller
         // 取得したデータの中心地を求める
         $latitude = $koumutens->average('latitude');
         $longitude = $koumutens->average('longitude');
-        $zoom = 5;
+        $zoom = 15;
 
         // constructのsinchikuカラムに数字が入力されている会社を一覧表示する。
         if ($request->has('sinchiku')) {
@@ -34,7 +34,7 @@ class KoumtenController extends Controller
         } else if ($request->has('reform')) {
             $constructs = 'リフォーム';
             $koumutens = Koumten::where('reform', '!=', 'null')->get();
-            return view('koumuten.index', compact('constructs', 'koumutens'));
+            return view('koumuten.index', compact('constructs','koumutens','latitude', 'longitude', 'zoom'));
         } 
         // 修理一覧ページへ飛ぶ
         else if ($request->has('repair')) {
@@ -45,23 +45,23 @@ class KoumtenController extends Controller
         else if ($request->has('repair_amamori')) {
             $constructs = '修繕(雨漏り)';
             $koumutens = Koumten::where('repair_amamori', '!=', 'null')->get();
-            return view('koumuten.index',compact('constructs', 'koumutens'));
+            return view('koumuten.index',compact('constructs','koumutens','latitude', 'longitude', 'zoom'));
         } else if ($request->has('repair_gaiheki')) {
             $constructs = '修繕(外壁修理)';
             $koumutens = Koumten::where('repair_gaiheki', '!=', 'null')->get();
-            return view('koumuten.index',compact('constructs', 'koumutens'));
+            return view('koumuten.index',compact('constructs','koumutens','latitude', 'longitude', 'zoom'));
         } else if ($request->has('repair_naisou')) {
             $constructs = '修繕(内装修理)';
             $koumutens = Koumten::where('repair_naisou', '!=', 'null')->get();
-            return view('koumuten.index',compact('constructs', 'koumutens'));
+            return view('koumuten.index',compact('constructs','koumutens','latitude', 'longitude', 'zoom'));
         } else if ($request->has('repair_mizumore')) {
             $constructs = '修繕(水漏れ)';
             $koumutens = Koumten::where('rrepair_mizumore', '!=', 'null')->get();
-            return view('koumuten.index',compact('constructs', 'koumutens'));
+            return view('koumuten.index',compact('constructs','koumutens','latitude', 'longitude', 'zoom'));
         } else if ($request->has('repair_aircon')) {
             $constructs = '修繕(エアコン修理)';
             $koumutens = Koumten::where('repair_aircon', '!=', 'null')->get();
-            return view('koumuten.index',compact('constructs', 'koumutens'));
+            return view('koumuten.index',compact('constructs','koumutens','latitude', 'longitude', 'zoom'));
         }
     }
 
@@ -122,7 +122,7 @@ class KoumtenController extends Controller
         $latitude = $koumten->latitude;
         $longitude = $koumten->longitude;
         $zoom = 12;
-        return view('koumuten.show', compact('koumten'));
+        return view('koumuten.show', compact('koumten', 'latitude', 'longitude','zoom'));
     }
 
     /**
