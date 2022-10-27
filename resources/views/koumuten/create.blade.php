@@ -78,7 +78,7 @@
         <h2 class="text-center text-lg font-bold pt-6 tracking-widest">対応工事/費用の登録</h2>
         <p class="text-gray-700 pt-6 tracking-widest">対応可能な工事項目の最低予算を記入してください</p>
 
-        <form action="">
+        {{-- <form action=""> --}}
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="sinchiku">
                     新築
@@ -139,7 +139,6 @@
             </div>
             <input type="submit" value="登録"
                 class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-
         </form>
 
 

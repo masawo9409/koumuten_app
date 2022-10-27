@@ -26,5 +26,12 @@ class Koumten extends Model
         'avairable_area',
         'contact_address_phone',
         'contact_address_mail',
+        'sinchiku',
+        'reform',
+        'repair_amamori',
+        'repair_gaiheki',
+        'repair_naisou',
+        'repair_mizumore',
+        'repair_aircon',
     ];
 }

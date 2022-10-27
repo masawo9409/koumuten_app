@@ -20,6 +20,13 @@ class CreateKoumtensTable extends Migration
             $table->string('avairable_area');
             $table->string('contact_address_phone');
             $table->string('contact_address_mail');
+            $table->integer('sinchiku')->nullable();
+            $table->integer('reform')->nullable();
+            $table->integer('repair_amamori')->nullable();
+            $table->integer('repair_gaiheki')->nullable();
+            $table->integer('repair_naisou')->nullable();
+            $table->integer('repair_mizumore')->nullable();
+            $table->integer('repair_aircon')->nullable();
             $table->foreignId('user_id')
                 ->constrained()
                 ->cascadeOnUpdate()

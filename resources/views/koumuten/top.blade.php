@@ -1,9 +1,9 @@
 <x-app-layout>
     <!-- 依頼内容選択画面 -->
     <p>依頼内容を選択してください</p>
-    <form action="{{ route('button1') }}" method='get'>
-        @csrf
-        <div class="button01">
+    <div class="button01">
+        <form action="{{ route('button1') }}" method='get'>
+            @csrf
             <!-- 新築の会社一覧ページに飛ばしたい -->
             <!-- 理想的には、会社一覧ページのフォーマットを作成して、そこに新築やリフォーム等の該当会社の一覧を表示させたい。 -->
             <!-- リンククリックするとindexのビューを読み込むURLを設置。     -->
@@ -18,14 +18,15 @@
             </button>
             <br>
             <br>
-            <button type="submit" name="repair" onclick="location.href='{{ route('button1') }}'">
+        </form>
+        <form action="{{ route('button2') }}" method='get'>
+            <button type="submit" name="repair" onclick="location.href='{{ route('button2') }}'">
                 <a>家の修理をしたい</a>
             </button>
             <br>
             <br>
-        </div>
-    </form>
-    
+        </form>
+    </div>
 
     {{-- 地図 --}}
     <div id="map" style="width:1000px; height:600px"></div>
