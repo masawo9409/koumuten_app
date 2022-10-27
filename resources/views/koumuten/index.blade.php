@@ -8,8 +8,8 @@
     <p>{{ $constructs }} に対応できる会社一覧</p>
 
     @foreach ($koumutens as $koumuten)
-        <div >
-            <a href="{{ route('koumtens.show',$koumuten) }}">{{ $koumuten->name }}</a>
+        <div>
+            <a href="{{ route('koumtens.show', $koumuten) }}">{{ $koumuten->name }}</a>
             <br>
             {{ $koumuten->address }}
             <br>
@@ -19,7 +19,7 @@
             <br>
             {{ $koumuten->contact_address_phone }}
             <br>
-            {{ $koumuten->contact_address_mail }} 
+            {{ $koumuten->contact_address_mail }}
         </div>
         -----------------------------
     @endforeach
@@ -34,7 +34,7 @@
     <script>
         @if (!empty($koumutens))
             @foreach ($koumutens as $koumuten)
-                L.marker([{{ $koumuten->latitude }},{{ $koumuten->longitude }}])
+                L.marker([{{ $koumuten->latitude }}, {{ $koumuten->longitude }}])
                     .bindPopup('<a href="{{ route('koumtens.show', $koumuten) }}">{{ $koumuten->name }}</a>', {closeButton: false})
                     .addTo(map);
             @endforeach
