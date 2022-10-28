@@ -7,27 +7,27 @@
         <div class="button01">
             <form action="{{ route('button1') }}" method='get'>
                 @csrf
-                <button type="submit" name="repair" onclick="location.href='{{ route('button1') }}'">
+                <button type="submit" name="repair_amamori" onclick="location.href='{{ route('button1') }}'">
                     <a>修理(雨漏り)</a>
                 </button>
                 <br>
                 <br>
-                <button type="submit" name="reform" onclick="location.href='{{ route('button1') }}'">
+                <button type="submit" name="repair_gaiheki" onclick="location.href='{{ route('button1') }}'">
                     <a>修理(外壁修理)</a>
                 </button>
                 <br>
                 <br>
-                <button type="submit" name="reform" onclick="location.href='{{ route('button1') }}'">
+                <button type="submit" name="repair_naisou" onclick="location.href='{{ route('button1') }}'">
                     <a>修理(内装修理)</a>
                 </button>
                 <br>
                 <br>
-                <button type="submit" name="reform" onclick="location.href='{{ route('button1') }}'">
+                <button type="submit" name="repair_mizumore" onclick="location.href='{{ route('button1') }}'">
                     <a>修理(水漏れ)</a>
                 </button>
                 <br>
                 <br>
-                <button type="submit" name="reform" onclick="location.href='{{ route('button1') }}'">
+                <button type="submit" name="repair_aircon" onclick="location.href='{{ route('button1') }}'">
                     <a>修理(エアコン修理)</a>
                 </button>
                 <br>

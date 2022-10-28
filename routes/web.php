@@ -14,31 +14,25 @@ use App\Http\Controllers\KoumtenController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/', [KoumtenController::class, 'index'])
-//     ->name('root');
+Route::get('/top', function () {
+    return view('koumuten.top');
+})->name('top');
 
 Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/top', function () {
-    return view('koumuten.top');})
-    ->name('top');
 
-Route::resource('/koumtens',KoumtenController::class)
-    ->only(['create','store','edit','update','destroy'])
+Route::resource('/koumtens', KoumtenController::class)
+    ->only(['create', 'store', 'edit', 'update', 'destroy'])
     ->middleware('auth');
 
 Route::resource('/koumtens', KoumtenController::class)
     ->only(['show', 'index']);
 
-Route::get('/b1',[App\Http\Controllers\KoumtenController::class,'button1'])
+Route::get('/b1', [App\Http\Controllers\KoumtenController::class, 'button1'])
     ->name('button1');
-Route::get('/b2',[App\Http\Controllers\KoumtenController::class,'button2'])
+Route::get('/b2', [App\Http\Controllers\KoumtenController::class, 'button2'])
     ->name('button2');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
