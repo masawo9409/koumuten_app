@@ -1,7 +1,7 @@
 <x-app-layout>
     <!-- 依頼内容選択画面 -->
-    <div class="container max-w-2xl px-4 md:px-12 pb-3 mt-5 ml-3 mr-3 bg-white shadow-md">
-        <div class="container pt-3 pb-3 font-bold">
+    <div class="container max-w-7xl px-4 md:px-12 pb-3 mt-5 ml-3 mr-3 bg-white shadow-md">
+        <div class="container pt-3 pb-3 font-bold text-gray-700">
             <p>依頼内容を選択してください</p>
         </div>
         <div class="button01">
