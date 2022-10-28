@@ -11,9 +11,10 @@
             </div>
 
             @foreach ($koumutens as $koumuten)
-                <div class="container bg-gray max-w-2xl">
-                    <a href="{{ route('koumtens.show', $koumuten) }}">{{ $koumuten->name }}</a>
-                    <br>
+                <div class="bg-gray-100 max-w-2xl py-4 px-4">
+                    <div class="font-bold">
+                        <a href="{{ route('koumtens.show', $koumuten) }}">{{ $koumuten->name }}</a>
+                    </div>
                     {{ $koumuten->address }}
                     <br>
                     {{ $koumuten->avairable_area }}
@@ -24,7 +25,7 @@
                     <br>
                     {{ $koumuten->contact_address_mail }}
                 </div>
-                -----------------------------
+                <br>
             @endforeach
 
             <form action="{{ route('button1') }}">
