@@ -80,9 +80,9 @@ class KoumtenController extends Controller
     public function create()
     {
           // 最初に表示したい座標(今回は東京タワー)
-        $latitude = 35.658584;
-        $longitude = 139.7454316;
-        $zoom = 10;
+        $latitude = 38.988139;
+        $longitude = 141.116581;
+        $zoom = 15;
         return view('koumuten.create', compact('latitude', 'longitude', 'zoom'));
     }
 

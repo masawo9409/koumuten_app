@@ -33,5 +33,7 @@ class Koumten extends Model
         'repair_naisou',
         'repair_mizumore',
         'repair_aircon',
+        'latitude',
+        'longitude',
     ];
 }

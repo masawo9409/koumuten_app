@@ -1,6 +1,6 @@
 <!-- 会社詳細が表示されるページ -->
 <x-app-layout>
-    <div class="container max-w-7xl px-4 md:px-12 pb-3 mt-5 ml-3 mr-3 bg-white shadow-md">
+    <div class="container  px-4 md:px-12 pb-3 mt-5 ml-3 mr-3 bg-white shadow-md">
         <div class="container text-lg pt-3 pb-3 font-bold text-gray-700">
             <p>{{ $koumten->name }}</p>
         </div>

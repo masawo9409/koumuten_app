@@ -10,7 +10,7 @@
                 <p>{{ $constructs }} に対応できる会社一覧</p>
             </div>
             @foreach ($koumutens as $koumuten)
-                <div class="bg-gray-100 max-w-2xl py-4 px-4">
+                <div class="bg-gray-100 py-4 px-4">
                     <div class="font-bold">
                         <a href="{{ route('koumtens.show', $koumuten) }}">{{ $koumuten->name }}</a>
                     </div>
