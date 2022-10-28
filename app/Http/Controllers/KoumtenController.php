@@ -150,9 +150,14 @@ class KoumtenController extends Controller
      * @param  \App\Models\Koumten  $koumten
      * @return \Illuminate\Http\Response
      */
-    public function edit(Koumten $koumten)
+    public function edit($id)
     {
-        //
+        $koumuten = Koumten::find($id);
+        $latitude = $koumuten->latitude;
+        $longitude = $koumuten->longitude;
+        $zoom = 15;
+
+        return view('koumuten.edit', compact('koumuten', 'latitude', 'longitude', 'zoom'));
     }
 
     /**

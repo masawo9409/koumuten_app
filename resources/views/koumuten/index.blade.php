@@ -6,7 +6,7 @@
     </x-slot>
     <div class="container max-w-7xl px-4 md:px-12 pb-3 mt-5 ml-3 mr-3 bg-white shadow-md">
         <div class="container pt-3 pb-3">
-            <div class="font-bold pb-5">
+            <div class=" container font-bold pb-5 text-lg pt-3 pb-3 font-bold text-gray-700"">
                 <p>{{ $constructs }} に対応できる会社一覧</p>
             </div>
             @foreach ($koumutens as $koumuten)
@@ -33,6 +33,7 @@
             <form action="{{ route('button1') }}">
                 <button type="submit" name="top" onclick="location.href='{{ route('button1') }}'">
             </form>
+
         </div>
         <div id="map" style="width:1000px; height:600px"></div>
     </div>
