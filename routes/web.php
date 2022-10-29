@@ -14,11 +14,11 @@ use App\Http\Controllers\KoumtenController;
 |
 */
 
-Route::get('/top', function () {
+Route::get('/', function () {
     return view('koumuten.top');
 })->name('top');
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
