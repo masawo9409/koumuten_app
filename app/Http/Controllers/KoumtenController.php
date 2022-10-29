@@ -150,14 +150,13 @@ class KoumtenController extends Controller
      * @param  \App\Models\Koumten  $koumten
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Koumten $koumten)
     {
-        $koumuten = Koumten::find($id);
-        $latitude = $koumuten->latitude;
-        $longitude = $koumuten->longitude;
+        $latitude = $koumten->latitude;
+        $longitude = $koumten->longitude;
         $zoom = 15;
 
-        return view('koumuten.edit', compact('koumuten', 'latitude', 'longitude', 'zoom'));
+        return view('koumuten.edit', compact('koumten', 'latitude', 'longitude', 'zoom'));
     }
 
     /**
@@ -168,8 +167,10 @@ class KoumtenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Koumten $koumten)
-    {
-        $koumten = $request;
+    {   
+        $koumten->fill($request->all());
+        $koumten->save();
+
         $latitude = $koumten->latitude;
         $longitude = $koumten->longitude;
         $zoom = 15;

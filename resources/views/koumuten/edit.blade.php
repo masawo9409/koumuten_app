@@ -16,7 +16,7 @@
             </div>
         @endif --}}
 
-        <form action="{{ route('koumtens.update', $koumuten) }}" method="POST" enctype="multipart/form-data"
+        <form action="{{ route('koumtens.update', $koumten) }}" method="POST" enctype="multipart/form-data"
             class="rounded pt-3 pb-8 mb-4">
             @csrf
             @method('PUT')
@@ -27,7 +27,7 @@
                 </label>
                 <input type="text" name="name"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                    placeholder="会社名" value="{{ old('name', $koumuten->name) }}">
+                    placeholder="会社名" value="{{ old('name', $koumten->name) }}">
             </div>
             {{-- 住所 --}}
             <div class="mb-4">
@@ -35,7 +35,7 @@
                     住所
                 </label>
                 <textarea name="address" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('address', $koumuten->address) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('address', $koumten->address) }}</textarea>
             </div>
             {{-- 対応可能エリア --}}
             <div class="mb-4">
@@ -43,7 +43,7 @@
                     対応可能エリア
                 </label>
                 <textarea name="avairable_area" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('avairable_area', $koumuten->avairable_area) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('avairable_area', $koumten->avairable_area) }}</textarea>
             </div>
             {{-- 電話番号 --}}
             <div class="mb-4">
@@ -51,7 +51,7 @@
                     電話番号
                 </label>
                 <textarea name="contact_address_phone" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('contact_address_phone', $koumuten->contact_address_phone) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('contact_address_phone', $koumten->contact_address_phone) }}</textarea>
             </div>
             {{-- メールアドレス --}}
             <div class="mb-4">
@@ -59,7 +59,7 @@
                     メールアドレス
                 </label>
                 <textarea name="contact_address_mail" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('contact_address_mail', $koumuten->contact_address_mail) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('contact_address_mail', $koumten->contact_address_mail) }}</textarea>
             </div>
             {{-- 画像アップロード --}}
             {{-- <div class="mb-4">
@@ -81,7 +81,7 @@
                     新築
                 </label>
                 <textarea name="sinchiku" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('sinchiku', $koumuten->sinchiku) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('sinchiku', $koumten->sinchiku) }}</textarea>
             </div>
 
             <div class="mb-4">
@@ -89,7 +89,7 @@
                     リフォーム
                 </label>
                 <textarea name="reform" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('reform', $koumuten->sinchiku) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('reform', $koumten->sinchiku) }}</textarea>
             </div>
 
             <div class="mb-4">
@@ -97,38 +97,38 @@
                     修理(雨漏り)
                 </label>
                 <textarea name="repair_amamori" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_amamori', $koumuten->repair_amamori) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_amamori', $koumten->repair_amamori) }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_gaiheki">
                     修理(外壁修理)
                 </label>
                 <textarea name="repair_gaiheki" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_gaiheki', $koumuten->repair_gaiheki) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_gaiheki', $koumten->repair_gaiheki) }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_naisou">
                     修理(内装修理)
                 </label>
                 <textarea name="repair_naisou" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_naisou', $koumuten->repair_naisou) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_naisou', $koumten->repair_naisou) }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_mizumore">
                     修理(水漏れ)
                 </label>
                 <textarea name="repair_mizumore" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_mizumore', $koumuten->repair_mizumore) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_mizumore', $koumten->repair_mizumore) }}</textarea>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm mb-2" for="repair_aircon">
                     修理(エアコン修理)
                 </label>
                 <textarea name="repair_aircon" rows="1"
-                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_aircon', $koumuten->repair_aircon) }}</textarea>
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3">{{ old('repair_aircon', $koumten->repair_aircon) }}</textarea>
             </div>
-            <input type="hidden" id="latitude" name="latitude" value="{{ $koumuten->latitude }}">
-            <input type="hidden" id="longitude" name="longitude" value="{{ $koumuten->longitude }}">
+            <input type="hidden" id="latitude" name="latitude" value="{{ $koumten->latitude }}">
+            <input type="hidden" id="longitude" name="longitude" value="{{ $koumten->longitude }}">
             <div id="map" style="width:650px; height:600px"></div>
             <br>
             <div>
@@ -142,11 +142,11 @@
             <script>
                 const lat = document.getElementById('latitude');
                 const lng = document.getElementById('longitude');
-                @if (!empty($koumuten))
-                    const marker = L.marker([{{ $koumuten->latitude }}, {{ $koumuten->longitude }}], {
+                @if (!empty($koumten))
+                    const marker = L.marker([{{ $koumten->latitude }}, {{ $koumten->longitude }}], {
                             draggable: true
                         })
-                        .bindPopup("{{ $koumuten->name }}", {
+                        .bindPopup("{{ $koumten->name }}", {
                             closeButton: false
                         })
                         .addTo(map);
