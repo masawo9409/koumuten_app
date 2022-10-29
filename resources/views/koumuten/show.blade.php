@@ -47,11 +47,19 @@
         {{-- <form action="{{ route('button1') }}" method="GET">
             <input type="submit" value="会社一覧に戻る">
         </form> --}}
-
-        <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500  ">
-            <form action="{{ route('koumtens.edit', $koumten) }}">
-                <button type="submit" name="top" onclick="location.href=">会社情報を編集する</button>
-            </form>
+        <div class="flex">
+            <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 m-3 ">
+                <form action="{{ route('koumtens.edit', $koumten) }}">
+                    <button type="submit" name="top" onclick="location.href=">会社情報を編集する</button>
+                </form>
+            </div>
+            <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 m-3 ">
+                <form action="{{ route('koumtens.destroy', $koumten) }}" method="POST">
+                @csrf
+                @method('delete')
+                    <button type="submit" name="top" onclick="location.href=">会社情報を削除する</button>
+                </form>
+            </div>
         </div>
 
         <br>

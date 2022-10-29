@@ -186,6 +186,8 @@ class KoumtenController extends Controller
      */
     public function destroy(Koumten $koumten)
     {
-        //
+        $koumten->delete();
+        return redirect()->route('top')
+            ->with('notice', '記事を削除しました');
     }
 }
