@@ -50,7 +50,7 @@
         </form> --}}
             </div>
             <br>
-            <div class="mt-3 ml-3">
+            <div class="mt-3 ml-3 max-w-full">
                 <div id="map" style="width:1000px; height:600px"></div>
             </div>
         </div>
