@@ -49,7 +49,7 @@
         </form> --}}
 
         <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500  ">
-            <form action="{{ route('koumtens.edit', $koumten) }}">
+            <form action="{{ route('koumtens.edit', $koumten->id) }}">
                 <button type="submit" name="top" onclick="location.href=">会社情報を編集する</button>
             </form>
         </div>

@@ -69,7 +69,7 @@ class KoumtenController extends Controller
             return view('koumuten.index', compact('constructs', 'koumutens', 'latitude', 'longitude', 'zoom'));
         } else if ($request->has('repair_mizumore')) {
             $constructs = '修繕(水漏れ)';
-            $koumutens = Koumten::where('rrepair_mizumore', '!=', 'null')->get();
+            $koumutens = Koumten::where('repair_mizumore', '!=', 'null')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
@@ -169,7 +169,12 @@ class KoumtenController extends Controller
      */
     public function update(Request $request, Koumten $koumten)
     {
-        //
+        $koumten = $request;
+        $latitude = $koumten->latitude;
+        $longitude = $koumten->longitude;
+        $zoom = 15;
+
+        return view('koumuten.show', compact('koumten', 'latitude', 'longitude', 'zoom'));
     }
 
     /**

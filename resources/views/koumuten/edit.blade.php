@@ -132,8 +132,8 @@
             <div id="map" style="width:650px; height:600px"></div>
             <br>
             <div>
-                <input type="submit" value="登録"
-                    class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    <input type="submit" value="登録"
+                        class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             </div>
         </form>
 
