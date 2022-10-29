@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('koumuten.top');
 })->name('top');
 
+Route::get('/test', function () {
+    return view('koumuten.test');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
