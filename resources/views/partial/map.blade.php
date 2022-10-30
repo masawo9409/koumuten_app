@@ -7,6 +7,7 @@
     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
 
 <script>
+    // const { normalize } = require('@geolonia/normalize-japanese-addresses')
     // 地図描画エリアを作成
     // id=mapで地図が表示されるようなオブジェクトを作成。
     // もしかしてL()の中身がidになる？

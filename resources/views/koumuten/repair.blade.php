@@ -46,7 +46,7 @@ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
                                     </a>
                                 </div>
                             </button>
-                            <button type="submit" name="repair_naisou"
+                            <button type="submit" name="repair_mizumore"
                                 class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
                                 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
                                 <div class="relative flex items-center space-x-4 justify-center">
@@ -58,7 +58,7 @@ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
                                     </a>
                                 </div>
                             </button>
-                            <button type="submit" name="repair_naisou"
+                            <button type="submit" name="repair_aircon"
                                 class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
                                 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
                                 <div class="relative flex items-center space-x-4 justify-center">

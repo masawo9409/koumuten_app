@@ -39,6 +39,8 @@
 
             </div>
             <div class="mt-3 h-2">
+                {{-- <input type="text" id="address" />
+                <button id="search">検索</button> --}}
                 <div id="map" style="width:1000px; height:600px" class="flex"></div>
             </div>
         </div>
