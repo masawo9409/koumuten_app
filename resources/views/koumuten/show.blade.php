@@ -63,7 +63,7 @@
                 </div>
             @endauth
             @auth
-            <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-3 ">
+            <div class="block text-gray-700 mb-7 mt-5 hover:text-gray-500 mr-3 ">
                 <form action="{{ route('koumtens.destroy', $koumten) }}" method="POST">
                     @csrf
                     @method('delete')
@@ -71,6 +71,9 @@
                 </form>
             </div>
             @endauth
+            <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-3 ">
+            <a href="{{ url()->previous() }}">戻る</a>
+            </div>
         </div>
 
         @include('partial.map')

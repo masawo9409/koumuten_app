@@ -18,7 +18,7 @@ class KoumtenController extends Controller
     public function button1(Request $request)
     {
         $koumutens = Koumten::all();
-
+        // dd($request);
         // 取得したデータの中心地を求める
         $latitude = $koumutens->average('latitude');
         $longitude = $koumutens->average('longitude');
@@ -28,7 +28,7 @@ class KoumtenController extends Controller
         if ($request->has('sinchiku')) {
             $constructs = '新築';
             // Koumtenテーブルでsinchikuカラムが-でないレコードデータを取得。
-            $koumutens = Koumten::where('sinchiku', '!=', 'null')->get();
+            $koumutens = Koumten::where('sinchiku', '!=', 'null')->orderBy('sinchiku', 'asc')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
@@ -36,7 +36,7 @@ class KoumtenController extends Controller
             return view('koumuten.index', compact('constructs', 'koumutens', 'latitude', 'longitude', 'zoom'));
         } elseif ($request->has('reform')) {
             $constructs = 'リフォーム';
-            $koumutens = Koumten::where('reform', '!=', 'null')->get();
+            $koumutens = Koumten::where('reform', '!=', 'null')->orderBy('reform', 'asc')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
@@ -48,35 +48,35 @@ class KoumtenController extends Controller
             return view('koumuten.repair');
         } elseif ($request->has('repair_amamori')) {
             $constructs = '修繕(雨漏り)';
-            $koumutens = Koumten::where('repair_amamori', '!=', 'null')->get();
+            $koumutens = Koumten::where('repair_amamori', '!=', 'null')->orderBy('repair_amamori', 'asc')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
             return view('koumuten.index', compact('constructs', 'koumutens', 'latitude', 'longitude', 'zoom'));
         } elseif ($request->has('repair_gaiheki')) {
             $constructs = '修繕(外壁修理)';
-            $koumutens = Koumten::where('repair_gaiheki', '!=', 'null')->get();
+            $koumutens = Koumten::where('repair_gaiheki', '!=', 'null')->orderBy('repair_naisou', 'asc')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
             return view('koumuten.index', compact('constructs', 'koumutens', 'latitude', 'longitude', 'zoom'));
         } elseif ($request->has('repair_naisou')) {
             $constructs = '修繕(内装修理)';
-            $koumutens = Koumten::where('repair_naisou', '!=', 'null')->get();
+            $koumutens = Koumten::where('repair_naisou', '!=', 'null')->orderBy('repair_naisou', 'asc')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
             return view('koumuten.index', compact('constructs', 'koumutens', 'latitude', 'longitude', 'zoom'));
         } else if ($request->has('repair_mizumore')) {
             $constructs = '修繕(水漏れ)';
-            $koumutens = Koumten::where('repair_mizumore', '!=', 'null')->get();
+            $koumutens = Koumten::where('repair_mizumore', '!=', 'null')->orderBy('repair_mizumore', 'asc')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
             return view('koumuten.index', compact('constructs', 'koumutens', 'latitude', 'longitude', 'zoom'));
         } else if ($request->has('repair_aircon')) {
             $constructs = '修繕(エアコン修理)';
-            $koumutens = Koumten::where('repair_aircon', '!=', 'null')->get();
+            $koumutens = Koumten::where('repair_aircon', '!=', 'null')->orderBy('repair_aircon', 'asc')->get();
             $latitude = $koumutens->average('latitude');
             $longitude = $koumutens->average('longitude');
             $zoom = 15;
@@ -167,7 +167,7 @@ class KoumtenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Koumten $koumten)
-    {   
+    {
         $koumten->fill($request->all());
         $koumten->save();
 

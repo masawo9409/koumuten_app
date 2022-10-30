@@ -19,8 +19,24 @@
                             <div class="block text-gray-700 text-sm mt-2">{{ $koumuten->address }}</div>
                             <div class="block text-gray-700 text-sm mt-2">対応可能エリア</div>
                             <h3>{{ $koumuten->avairable_area }}</h3>
+                            {{-- 工事中 --}}
                             <div class="block text-gray-700 text-sm mt-2">{{ $constructs }}工事の予算(万円)</div>
-                            <h3>{{ $koumuten->sinchiku }}~</h3>
+                            @if ($constructs == '新築')
+                                <h3>{{ $koumuten->sinchiku }}~</h3>
+                            @elseif ($constructs == 'リフォーム')
+                                <h3>{{ $koumuten->reform }}~</h3>
+                            @elseif ($constructs == '修繕(雨漏り)')
+                                <h3>{{ $koumuten->repair_amamori }}~</h3>
+                            @elseif ($constructs == '修繕(外壁修理)')
+                                <h3>{{ $koumuten->repair_gaiheki }}~</h3>
+                            @elseif ($constructs == '修繕(内装修理)')
+                                <h3>{{ $koumuten->repair_naisou }}~</h3>
+                            @elseif ($constructs == '修繕(水漏れ)')
+                                <h3>{{ $koumuten->repair_mizumore }}~</h3>
+                            @elseif ($constructs == '修繕(エアコン修理)')
+                                <h3>{{ $koumuten->repair_aircon }}~</h3>
+                            @endif
+
                             <div class="block text-gray-700 text-sm mt-2">電話番号</div>
                             <h3>{{ $koumuten->contact_address_phone }}</h3>
                             <div class="block text-gray-700 text-sm mt-2">メールアドレス</div>

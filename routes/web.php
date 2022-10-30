@@ -36,6 +36,9 @@ Route::resource('/koumtens', KoumtenController::class)
 
 Route::get('/b1', [App\Http\Controllers\KoumtenController::class, 'button1'])
     ->name('button1');
+    
+// Route::get('/index/{$koumten}', [App\Http\Controllers\KoumtenController::class, 'button1'])
+//     ->name('button1');
 Route::get('/b2', [App\Http\Controllers\KoumtenController::class, 'button2'])
     ->name('button2');
 
