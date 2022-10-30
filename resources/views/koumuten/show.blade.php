@@ -55,6 +55,7 @@
             </div>
         </div>
         <div class="flex justfy-content">
+            @can('update',$koumten)
             @auth
                 <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-5 ">
                     <form action="{{ route('koumtens.edit', $koumten) }}">
@@ -62,6 +63,8 @@
                     </form>
                 </div>
             @endauth
+            @endcan
+            @can('delete',$koumten)
             @auth
             <div class="block text-gray-700 mb-7 mt-5 text-sm hover:text-gray-500 mr-5 ">
                 <form action="{{ route('koumtens.destroy', $koumten) }}" method="POST">
@@ -71,6 +74,7 @@
                 </form>
             </div>
             @endauth
+            @endcan
             <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-5 ">
             <a href="{{ url()->previous() }}">戻る</a>
             </div>
