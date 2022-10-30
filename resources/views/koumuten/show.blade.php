@@ -56,14 +56,14 @@
         </div>
         <div class="flex justfy-content">
             @auth
-                <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-3 ">
+                <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-5 ">
                     <form action="{{ route('koumtens.edit', $koumten) }}">
                         <button type="submit" name="top" onclick="location.href=">会社情報を編集する</button>
                     </form>
                 </div>
             @endauth
             @auth
-            <div class="block text-gray-700 mb-7 mt-5 hover:text-gray-500 mr-3 ">
+            <div class="block text-gray-700 mb-7 mt-5 text-sm hover:text-gray-500 mr-5 ">
                 <form action="{{ route('koumtens.destroy', $koumten) }}" method="POST">
                     @csrf
                     @method('delete')
@@ -71,7 +71,7 @@
                 </form>
             </div>
             @endauth
-            <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-3 ">
+            <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-5 ">
             <a href="{{ url()->previous() }}">戻る</a>
             </div>
         </div>
