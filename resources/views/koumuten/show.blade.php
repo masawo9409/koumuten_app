@@ -55,11 +55,14 @@
             </div>
         </div>
         <div class="flex justfy-content">
-            <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-3 ">
-                <form action="{{ route('koumtens.edit', $koumten) }}">
-                    <button type="submit" name="top" onclick="location.href=">会社情報を編集する</button>
-                </form>
-            </div>
+            @auth
+                <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-3 ">
+                    <form action="{{ route('koumtens.edit', $koumten) }}">
+                        <button type="submit" name="top" onclick="location.href=">会社情報を編集する</button>
+                    </form>
+                </div>
+            @endauth
+            @auth
             <div class="block text-gray-700 text-sm mb-7 mt-5 hover:text-gray-500 mr-3 ">
                 <form action="{{ route('koumtens.destroy', $koumten) }}" method="POST">
                     @csrf
@@ -67,6 +70,7 @@
                     <button type="submit" name="top" onclick="location.href=">会社情報を削除する</button>
                 </form>
             </div>
+            @endauth
         </div>
 
         @include('partial.map')

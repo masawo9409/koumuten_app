@@ -11,42 +11,42 @@
                         </div>
 
                         <form action="{{ route('button1') }}" method="get">
-                        @csrf
-                        <div class="mt-16 grid space-y-4">
-                            <button  type="submit" name="sinchiku"
-                                class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
+                            @csrf
+                            <div class="mt-16 grid space-y-4">
+                                <button type="submit" name="sinchiku"
+                                    class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
-                                <div class="relative flex items-center space-x-4 justify-center">
-                                    <a href='/b1'>
-                                        <span
-                                            class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">新築をつくりたい</span>
-                                    </a>
-                                </div>
-                            </button>
-                            <button type="submit" name="reform"
-                                class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
+                                    <div class="relative flex items-center space-x-4 justify-center">
+                                        <a href='/b1'>
+                                            <span
+                                                class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">新築をつくりたい</span>
+                                        </a>
+                                    </div>
+                                </button>
+                                <button type="submit" name="reform"
+                                    class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
-                                <div class="relative flex items-center space-x-4 justify-center">
+                                    <div class="relative flex items-center space-x-4 justify-center">
 
-                                    <a href="">
-                                        <span
-                                            class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">リフォームをしたい
-                                        </span>
-                                    </a>
-                                </div>
-                            </button>
-                            <button type="submit" name="repair"
-                                class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
-                                hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
-                                <div class="relative flex items-center space-x-4 justify-center">
-
-                                    <a href="">
-                                        <span
-                                            class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">家の修理をしたい
+                                        <a href="">
+                                            <span
+                                                class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">リフォームをしたい
                                             </span>
-                                    </a>
-                                </div>
-                            </button>
+                                        </a>
+                                    </div>
+                                </button>
+                                <button type="submit" name="repair"
+                                    class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
+                                hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                                    <div class="relative flex items-center space-x-4 justify-center">
+
+                                        <a href="">
+                                            <span
+                                                class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">家の修理をしたい
+                                            </span>
+                                        </a>
+                                    </div>
+                                </button>
                         </form>
 
                         <div class="mt-32 space-y-4 text-gray-600 text-center sm:-mb-8">
