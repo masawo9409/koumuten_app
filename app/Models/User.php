@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function koumten()
+    {
+        return $this->hasMany(Koumten::class);
+    }
+
+    public function construct()
+    {
+        return $this->hasmany(Construct::class);
+    }
 }
